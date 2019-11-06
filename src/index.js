@@ -29,7 +29,7 @@ changeColor.addEventListener('change', e => dispatch({ type: 'CHANGE_COLOR', col
 const setBtn = document.getElementById('btn')
 const text = document.getElementById('input')
 setBtn.addEventListener('click', function (e) {
-    e.preventDefault()
-    console.log(text.value)
-    dispatch({ type: 'SET_COUNTER', value: text.value })
+  e.preventDefault()
+  dispatch({ type: 'SET_COUNTER', value: text.value })
+  text.value = ''
 })
