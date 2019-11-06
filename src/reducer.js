@@ -31,6 +31,9 @@ const reducer = (currentState, action) => {
       break
     case 'CHANGE_COLOR':
       nextState.color = changeColor.value
+      break
+    case 'SET_COUNTER':
+      nextState.value = parseInt(text.value, 10)
   }
 
   // Using if else also works...

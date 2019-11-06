@@ -24,3 +24,12 @@ decrementBy5Button.addEventListener('click', e => dispatch({ type: 'DECREMENT_BY
 // Dispatch the "CHANGE_COLOR" action when the color is changed in the dropdown
 const changeColor = document.getElementById('color')
 changeColor.addEventListener('change', e => dispatch({ type: 'CHANGE_COLOR', color: changeColor.value }))
+
+// Dispatch the "SET_COUNTER" action when a number is submitted
+const setBtn = document.getElementById('btn')
+const text = document.getElementById('input')
+setBtn.addEventListener('click', function (e) {
+    e.preventDefault()
+    console.log(text.value)
+    dispatch({ type: 'SET_COUNTER', value: text.value })
+})
