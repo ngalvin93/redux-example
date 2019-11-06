@@ -20,3 +20,7 @@ incrementBy5Button.addEventListener('click', e => dispatch({ type: "INCREMENT_BY
 
 const decrementBy5Button = document.getElementById('decrementBy5')
 decrementBy5Button.addEventListener('click', e => dispatch({ type: "DECREMENT_BY_5"}))
+
+// Dispatch the "CHANGE_COLOR" action when the color is changed in the dropdown
+const changeColor = document.getElementById('color')
+changeColor.addEventListener('change', e => dispatch({ type: "CHANGE_COLOR", color: changeColor.value}))
