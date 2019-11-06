@@ -17,16 +17,33 @@ const reducer = (currentState, action) => {
   const { type } = action
   const nextState = deepCopy(initialState)
 
-  if (type === 'INCREMENT') {
-    nextState.value = currentState.value + 1
-  } else if (type === 'DECREMENT') {
-    nextState.value = currentState.value - 1
-  } else if (type === 'INCREMENT_BY_5') {
-    nextState.value = currentState.value + 5
-  } else if (type === 'DECREMENT_BY_5') {
-    nextState.value = currentState.value - 5
-  } else if (type === 'CHANGE_COLOR') {
-    nextState.color = changeColor.value
+  //   if (type === 'INCREMENT') {
+  //     nextState.value = currentState.value + 1
+  //   } else if (type === 'DECREMENT') {
+  //     nextState.value = currentState.value - 1
+  //   } else if (type === 'INCREMENT_BY_5') {
+  //     nextState.value = currentState.value + 5
+  //   } else if (type === 'DECREMENT_BY_5') {
+  //     nextState.value = currentState.value - 5
+  //   } else if (type === 'CHANGE_COLOR') {
+  //     nextState.color = changeColor.value
+  //   }
+
+  switch (type) {
+    case 'INCREMENT':
+      nextState.value = currentState.value + 1
+      break
+    case 'DECREMENT':
+      nextState.value = currentState.value - 1
+      break
+    case 'INCREMENT_BY_5':
+      nextState.value = currentState.value + 5
+      break
+    case 'DECREMENT_BY_5':
+      nextState.value = currentState.value - 5
+      break
+    case 'CHANGE_COLOR':
+      nextState.color = changeColor.value
   }
 
   return nextState
