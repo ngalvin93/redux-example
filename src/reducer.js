@@ -1,48 +1,37 @@
 const initialState = {
-    value: 0,
-    color: 'black'
+  value: 0,
+  color: 'black'
 }
 
+// Function to make a deep copy of the initial state
 function deepCopy (x) {
-    return JSON.parse(JSON.stringify(x))
+  return JSON.parse(JSON.stringify(x))
 }
 
 const reducer = (currentState, action) => {
-    if (!currentState) {
-        return deepCopy(initialState)
-    }
+  // Returns a deep copy if there is no state
+  if (!currentState) {
+    return deepCopy(initialState)
+  }
 
-    let { type } = action
-    let nextState = deepCopy(initialState)
+  const { type } = action
+  const nextState = deepCopy(initialState)
 
-    if (type === 'INCREMENT') {
-        nextState.value = currentState.value + 1
-    }
-    else if (type === 'DECREMENT') {
-        nextState.value = currentState.value - 1
-    }
-    else if (type === 'INCREMENT_BY_5') {
-        nextState.value = currentState.value + 5
-    }
-    else if (type === 'DECREMENT_BY_5') {
-        nextState.value = currentState.value - 5
-    }
-    else if (type === 'CHANGE_COLOR') {
-        nextState.color = changeColor.value
-    }
+  if (type === 'INCREMENT') {
+    nextState.value = currentState.value + 1
+  } else if (type === 'DECREMENT') {
+    nextState.value = currentState.value - 1
+  } else if (type === 'INCREMENT_BY_5') {
+    nextState.value = currentState.value + 5
+  } else if (type === 'DECREMENT_BY_5') {
+    nextState.value = currentState.value - 5
+  } else if (type === 'CHANGE_COLOR') {
+    nextState.color = changeColor.value
+  }
 
-    return nextState
+  return nextState
 }
 
-//     // if (action.type === "GREEN"){
-//     //     state.color = 'green'
-//     // }
-//     // if (action.type === "RED"){
-//     //     state.color = 'red'
-//     // }
-//     // if (action.type === "BLUE"){
-//     //     state.color = 'blue'
-//     // }
 //     // switch (action.type) {
 //     //     // case "INCREMENT":
 //     //     //     return {
@@ -101,7 +90,6 @@ const reducer = (currentState, action) => {
 //     //         break;
 //     //         // return state
 
-    
 //     // }
 //     // return state
 //     let { type } = action; // not sure what this is doing...
